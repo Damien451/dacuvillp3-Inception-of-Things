@@ -13,7 +13,7 @@ spec:
         app: test-app
     spec:
       containers:
-      - name: test-app
+      - name: playground
         image: wil42/playground
 ---
 apiVersion: v1
