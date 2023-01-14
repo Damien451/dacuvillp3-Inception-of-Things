@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - name: test-app
+        image: wil42/playground
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-app-service
+  labels:
+    app: test-app
+spec:
+  selector:
+    app: test-app
+  ports:
+    - port: 80
+      targetPort: 8888
+  type: ClusterIP
