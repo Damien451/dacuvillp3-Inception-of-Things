@@ -17,43 +17,16 @@ spec:
         image: wil42/playground:v2
         containerPort: 80
 ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: test-app-service
-#   labels:
-#     app: test-app
-# spec:
-#   selector:
-#     app: test-app
-#   ports:
-#     - port: 80
-#       targetPort: 8888
-#   type: NodePort
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    name: test-app-service
   name: test-app-service
+  labels:
+    app: test-app
 spec:
-  ports:
-  - name: "8888"
-    port: 80
-    targetPort: 8888
   selector:
-    name: test-app-service
+    app: test-app
+  ports:
+    - port: 8888
+      targetPort: 80
   type: NodePort
-
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: test-app
-#   namespace: dev
-# spec:
-#   destination:
-#     namespace: dev
-#     server: https://kubernetes.default.svc
-#   containers:
-#     name: playground
-#     image: wil42/playground:v1
