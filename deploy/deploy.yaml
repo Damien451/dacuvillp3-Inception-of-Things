@@ -36,8 +36,8 @@ metadata:
   namespace: dev
 spec:
   destination:
-  - namespace: dev
+    namespace: dev
     server: https://kubernetes.default.svc
   containers:
-  - name: playground
+    name: playground
     image: wil42/playground:v1
