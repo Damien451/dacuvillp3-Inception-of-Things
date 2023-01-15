@@ -27,6 +27,6 @@ spec:
   selector:
     app: test-app
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 8080
+      targetPort: 8888
   type: NodePort
