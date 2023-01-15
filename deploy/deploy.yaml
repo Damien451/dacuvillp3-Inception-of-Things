@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Application
+kind: Deployment
 metadata:
   name: test-app
 spec:
