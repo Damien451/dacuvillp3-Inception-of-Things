@@ -27,7 +27,7 @@ spec:
   selector:
     app: test-app
   ports:
-    - port: 80
+    - port: 8888
       targetPort: 8888
   type: NodePort
 # apiVersion: argoproj.io/v1alpha1
