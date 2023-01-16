@@ -39,23 +39,7 @@ metadata:
     run: test-app
 spec:
   ports:
-  - name: http
-    protocol: TCP
-    port: 8888
-    targetPort: 8888
+    - port: 8888
+      protocol: TCP
   selector:
-    app: test-app
-  type: ClusterIP
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: test-app-service
-#   labels:
-#     run: test-app
-# spec:
-#   ports:
-#     - port: 8888
-#       protocol: TCP
-#   selector:
-#     app:  test-app
+    app:  test-app
