@@ -26,6 +26,11 @@ spec:
   selector:
     app: test-app
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8888
+  - port: 8888:8888
+    nodeFilters:
+      - loadbalancer
+
+#   ports:
+#   - protocol: TCP
+#     port: 80
+#     targetPort: 8888
